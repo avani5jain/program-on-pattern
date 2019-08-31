@@ -1,0 +1,61 @@
+#include <stdio.h>
+int pattern(int);
+int pattern2(int);
+int main()
+{  int n;
+
+scanf("%d",&n);
+if(n!=1&&n%2!=0)
+{
+pattern(n);
+pattern2(n);
+pattern(n);
+}
+return 0;
+}
+int pattern(int n)
+{ int i,j,k,a=1,b=n;
+for(i=1;i<=n;i+=2)
+{for(k=n;k>a;k-=2)
+{ printf(" ");}
+for(j=1;j<=i;j++)
+{ printf("*");}
+a+=2;
+printf("\n");
+}
+for(i=n;i>=1;i-=2)
+if(i!=n)
+{
+{ for(k=b;k<=n;k++)
+{ printf(" ");}
+for(j=1;j<=i;j++)
+{printf("*");}
+b--;
+printf("\n");
+}
+}
+return 0;
+}
+int pattern2(int n)
+{ int i,j,k,d;
+d=n/2;
+d=d+1;
+for(i=1;i<=n;i++)
+{ for(j=1;j<=n;j++)
+{ printf("@");}
+if(i<=d)
+{
+for(k=1;k<=i;k++)
+{ printf("*");}
+}
+if(i>d)
+{ for(k=d-1;k>=1;k--)
+{printf("*");}
+    d--;
+}
+printf("\n");
+
+}
+
+return 0;
+}
